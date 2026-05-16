@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import { Sparkles, Send, BrainCircuit } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export default function RightPanel({ analysisData, triggerAi }: { analysisData?: any, triggerAi?: number }) {
   const [input, setInput] = useState("");
@@ -97,9 +99,11 @@ export default function RightPanel({ analysisData, triggerAi }: { analysisData?:
               <div className={`max-w-[85%] p-3 rounded-2xl text-sm ${
                 m.role === "user" 
                   ? "bg-[var(--color-accent)] text-white rounded-tr-none" 
-                  : "bg-[var(--color-secondary)] text-[var(--color-foreground)] rounded-tl-none"
+                  : "bg-[var(--color-secondary)] text-[var(--color-foreground)] rounded-tl-none chat-markdown"
               }`}>
-                {m.content}
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                  {m.content}
+                </ReactMarkdown>
               </div>
             </motion.div>
           ))}
