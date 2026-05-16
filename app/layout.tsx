@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FinCalc",
+  title: "FinMinCalc",
   description: "Excel replacement for financial modeling",
 };
 
