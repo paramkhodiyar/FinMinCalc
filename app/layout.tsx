@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "FinMinCalc",
   description: "Excel replacement for financial modeling",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
